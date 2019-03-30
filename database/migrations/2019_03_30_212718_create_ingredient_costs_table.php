@@ -19,8 +19,8 @@ class CreateIngredientCostsTable extends Migration
             $table->integer('cost_unit_id');    // todo: set default in .env
             $table->integer('measure_unit_id');
             $table->decimal('cost_per_unit', 12, 8)->unsigned();
-            $this->timestamp('entered_at', 0)->nullable();
-            $this->timestamp('created_at', 0)->nullable();
+            $table->timestamp('entered_at', 0)->nullable();
+            $table->timestamp('created_at', 0)->nullable();
         });
     }
 
