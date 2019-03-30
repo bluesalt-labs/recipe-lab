@@ -13,8 +13,42 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+//Route::middleware('auth:api')->group(function() {
 
+    // API Version 1 Routes
+    Route::prefix('v1')->name('api.v1.')->namespace('Api')->group(function() {
 
+        // Users
+        Route::apiResource('users', 'UserController');
+        //Route::get('users/{user}/roles', 'UserController@roles')->name('users.roles');
+
+        // Cost Units
+        Route::apiResource('cost-units', 'CostUnitController');
+
+        // Ingredients
+        Route::apiResource('ingredients', 'IngredientController');
+
+        // Ingredient Categories
+        Route::apiResource('ingredient-types', 'IngredientTypeController');
+
+        // Ingredient Categories
+        Route::apiResource('ingredient-categories', 'IngredientCategoryController');
+
+        // Ingredient Costs
+        Route::apiResource('ingredient-costs', 'IngredientCostController');
+
+        // Measure Units
+        Route::apiResource('measure-units', 'MeasureUnitController');
+
+        // Recipes
+        Route::apiResource('recipes', 'RecipeController');
+
+        // Recipe Steps
+        Route::apiResource('recipe-steps', 'RecipeStepController');
+
+        // Recipe Ingredients
+        Route::apiResource('recipe-ingredients', 'RecipeIngredientController');
+
+    });
+
+//});

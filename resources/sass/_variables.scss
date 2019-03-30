@@ -3,19 +3,19 @@
 $body-bg: #f8fafc;
 
 // Typography
-$font-family-sans: 'Montserrat', 'system-ui', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-$font-family-serif: 'Roboto Slab', 'Constantia', 'Lucida Bright', 'Lucidabright', 'Lucida Serif', 'Lucida', 'DejaVu Serif', 'Bitstream Vera Serif', 'Liberation Serif', 'Georgia', serif;
+$font-family-sans: 'Oswald', 'system-ui', 'BlinkMacSystemFont', '-apple-system', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+$font-family-serif: 'EB Garamond', 'Constantia', 'Lucida Bright', 'Lucidabright', 'Lucida Serif', 'Lucida', 'DejaVu Serif', 'Bitstream Vera Serif', 'Liberation Serif', 'Georgia', serif;
 $font-family-mono: 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', monospace;
 
-$font-size-xs: .75rem;    // 12px
-$font-size-sm: .875rem;   // 14px
-$font-size-base: 1rem;    // 16px
-$font-size-lg: 1.125rem;  // 18px
-$font-size-xl: 1.25rem;   // 20px
-$font-size-2xl: 1.5rem;   // 24px
-$font-size-3xl: 1.875rem; // 30px
-$font-size-4xl: 2.25rem;  // 36px
-$font-size-5xl: 3rem;     // 48px
+$font-size-xs: .875rem;     // 14px
+$font-size-sm: 1rem;        // 16px
+$font-size-base: 1.125rem;  // 18px
+$font-size-lg: 1.25rem;     // 20px
+$font-size-xl: 1.5rem;      // 24px
+$font-size-2xl: 1.875rem;   // 30px
+$font-size-3xl: 2.25rem;    // 36px
+$font-size-4xl: 3rem;       // 48px
+$font-size-5xl: 3.5rem;     // 56px
 
 $font-weight-hairline: 100;
 $font-weight-thin: 200;
@@ -27,7 +27,7 @@ $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 $font-weight-black: 900;
 
-// todo: change this in here and tailwind to font-weight if I can.
+// todo: change this in here and tailwind to line-height if I can.
 $leading-none: 1;
 $leading-tight: 1.25;
 $leading-normal: 1.5;
