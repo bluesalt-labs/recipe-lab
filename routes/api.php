@@ -25,11 +25,14 @@ use Illuminate\Http\Request;
         // Cost Units
         Route::apiResource('cost-units', 'CostUnitController');
 
-        // Ingredient Categories
-        Route::apiResource('ingredient-categories', 'IngredientCategoryController');
-
         // Ingredients
         Route::apiResource('ingredients', 'IngredientController');
+
+        // Ingredient Categories
+        Route::apiResource('ingredient-types', 'IngredientTypeController');
+
+        // Ingredient Categories
+        Route::apiResource('ingredient-categories', 'IngredientCategoryController');
 
         // Ingredient Costs
         Route::apiResource('ingredient-costs', 'IngredientCostController');
