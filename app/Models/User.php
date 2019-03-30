@@ -2,9 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Pivots\RoleUser;
-use App\Models\Pivots\UserPermission;
-use Laravel\Passport\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -13,9 +10,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * Class User
  * @package App\Models
  */
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
-    use HasApiTokens, Notifiable;
+    use Notifiable;
 
     /**
      * The attributes that are mass assignable.
@@ -23,7 +20,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'username', 'email', 'is_employee', 'password',
+        'first_name', 'last_name', 'username', 'email', 'password',
     ];
 
     /**
@@ -45,38 +42,21 @@ class User extends Authenticatable
     ];
 
     /**
-     * Get roles this user belongs to.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function roles() {
-        return $this->belongsToMany(Role::class)->using(RoleUser::class)->withTimestamps();
-    }
-
-    /**
-     * Get permissions this user belongs to.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function permissions() {
-        return $this->belongsToMany(Permission::class)->using(UserPermission::class)->withTimestamps();
-    }
-
-    /**
-     * Get user's first and last name as a string.
+     * Get user's first and last name as a string if available, otherwise get their email.
      *
      * @return string
      */
     public function getFullName() {
-        return $this->first_name . ' ' . $this->last_name;
+        $fullname = trim($this->first_name . ' ' . $this->last_name);
+        return ( $fullname ? $fullname : $this->email );
     }
 
     /**
-     * Get user's username if it exists, otherwise get their email
+     * Get user's username if it exists, otherwise get their full name.
      *
      * @return string
      */
     public function getDisplayName() {
-        return ( trim($this->username) ? $this->username : $this->email);
+        return ( trim($this->username) ? $this->username : $this->getFullName() );
     }
 }
