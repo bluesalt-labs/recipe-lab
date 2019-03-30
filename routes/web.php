@@ -11,10 +11,17 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/********** Public Site routes **********/
+Route::name('public.')->group(function() {
+    Route::get('/', 'PublicController@index')->name('index');
+
+    Route::resetPassword();
+    Route::emailVerification();
 });
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// todo: add this
+    //->middleware('verified');
