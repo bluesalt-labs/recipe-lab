@@ -17,7 +17,6 @@ class CreateRecipesIngredientsTable extends Migration
             $table->bigIncrements('id');
             $table->bigInteger('recipe_id');
             $table->bigInteger('ingredient_id');
-            $table->bigInteger('ingredient_id');
             $table->integer('measure_unit_id');
             $table->decimal('amount', 12, 6)->unsigned();
             $table->integer('order')->default(0);
