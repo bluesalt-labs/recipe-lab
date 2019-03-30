@@ -1,5 +1,5 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Oswald|EB+Garamond');
 
 // Variables
 @import 'variables';
@@ -76,9 +76,12 @@
 
 // not sure if I need to do this here or in tailwind, but whatever.
 html {
-  font-family: $font-family-sans;
+  font-family: $font-family-serif;
+  font-size: $font-size-base;
+  line-height: $leading-normal;
+
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-serif;
+  font-family: $font-family-sans;
 }
