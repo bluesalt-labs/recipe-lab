@@ -11,8 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+/********** Public Site routes **********/
+Route::name('public.')->group(function() {
+    Route::get('/', 'PublicController@index')->name('index');
+
+    Route::resetPassword();
+    Route::emailVerification();
 });
 
 Auth::routes(['verify' => true]);

@@ -1,5 +1,5 @@
 <footer>
-    <div class="container">
+    <div class="container mx-auto">
 
     </div>
 </footer>
