@@ -17,7 +17,7 @@ class CreateCostUnitsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('symbol');
-            $this->timestamp('created_at', 0)->nullable();
+            $table->timestamp('created_at', 0)->nullable();
         });
     }
 
