@@ -73,3 +73,12 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+// not sure if I need to do this here or in tailwind, but whatever.
+html {
+  font-family: $font-family-sans;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-serif;
+}
