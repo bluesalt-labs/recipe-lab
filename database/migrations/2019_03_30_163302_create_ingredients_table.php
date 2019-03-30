@@ -17,7 +17,7 @@ class CreateIngredientsTable extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('description')->nullable();
-            $table->string('category_id')->nullable();
+            $table->string('ingredient_category_id')->nullable();
             $table->timestamps();
         });
     }

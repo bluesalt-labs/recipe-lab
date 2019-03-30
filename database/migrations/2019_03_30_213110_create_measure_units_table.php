@@ -14,7 +14,10 @@ class CreateMeasureUnitsTable extends Migration
     public function up()
     {
         Schema::create('measure_units', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
+            $table->string('name');
+            $table->string('short_name');
+            $table->integer('type');
             $table->timestamps();
         });
     }
