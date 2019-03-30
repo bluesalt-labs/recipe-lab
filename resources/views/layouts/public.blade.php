@@ -9,7 +9,7 @@
 @endpush
 
 @section('base-content')
-    @include('partials.public.header.base')
+    @include('partials.public.header')
 
     <main>
     @yield('content')
