@@ -17,7 +17,8 @@ class CreateMeasureUnitsTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->string('short_name');
-            $table->integer('type');
+            $table->integer('type')->default(0);
+            $table->integer('system')->default(0);
             $table->timestamps();
         });
     }
