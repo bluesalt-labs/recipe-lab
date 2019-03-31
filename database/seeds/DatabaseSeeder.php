@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
             IngredientCategoriesTableSeeder::class,
             IngredientTypesTableSeeder::class,
             MeasureUnitsTableSeeder::class,
+            MerchantsTableSeeder::class,
         ]);
     }
 }
