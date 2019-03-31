@@ -21,6 +21,16 @@ class TestController extends Controller
     }
 
 
+    public function ingredientEntry() {
+        return view('test.ingredient-entry');
+    }
+
+
+    public function ingredientEntryPost() {
+        return view('test.ingredient-entry')->with('postData', request()->all() );
+    }
+
+
     public function purchaseEntry() {
         return view('test.purchase-entry');
     }

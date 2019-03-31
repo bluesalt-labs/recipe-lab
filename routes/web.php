@@ -30,6 +30,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::name('test.')->prefix('test')->group(function() {
     Route::get('/', 'TestController@index')->name('index');
 
+    Route::get('ingredient-entry', 'TestController@ingredientEntry')->name('ingredient-entry');
+    Route::post('ingredient-entry', 'TestController@ingredientEntryPost')->name('ingredient-entry.post');
+
     Route::get('purchase-entry', 'TestController@purchaseEntry')->name('purchase-entry');
     Route::post('purchase-entry', 'TestController@purchaseEntryPost')->name('purchase-entry.post');
 
