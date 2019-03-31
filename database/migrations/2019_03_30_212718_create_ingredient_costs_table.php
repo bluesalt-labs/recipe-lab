@@ -16,7 +16,7 @@ class CreateIngredientCostsTable extends Migration
         Schema::create('ingredient_costs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('ingredient_id');
-            $table->integer('cost_unit_id');    // todo: set default in .env
+            $table->integer('cost_unit_id');
             $table->integer('measure_unit_id');
             $table->integer('merchant_id')->nullable();
             $table->decimal('cost_per_unit', 12, 8)->unsigned();

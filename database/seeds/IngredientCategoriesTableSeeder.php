@@ -15,7 +15,25 @@ class IngredientCategoriesTableSeeder extends Seeder
             [
                 'id'            => 1,
                 'name'          => 'Dry',
-                'description'   => '',
+                'description'   => null,
+                'created_at'    => '2019-04-01 00:00:00',
+            ],
+            [
+                'id'            => 2,
+                'name'          => 'Fat',
+                'description'   => null,
+                'created_at'    => '2019-04-01 00:00:00',
+            ],
+            [
+                'id'            => 3,
+                'name'          => 'Sugar',
+                'description'   => null,
+                'created_at'    => '2019-04-01 00:00:00',
+            ],
+            [
+                'id'            => 4,
+                'name'          => 'Spices',
+                'description'   => null,
                 'created_at'    => '2019-04-01 00:00:00',
             ],
         ]);
