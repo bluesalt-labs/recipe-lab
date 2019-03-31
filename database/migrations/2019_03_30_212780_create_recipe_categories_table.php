@@ -15,7 +15,6 @@ class CreateRecipeCategoriesTable extends Migration
     {
         Schema::create('recipe_categories', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->bigInteger('recipe_category_id');
             $table->string('name');
             $table->string('description')->nullable();
             $table->timestamps();
