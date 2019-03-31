@@ -25,3 +25,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // todo: add this
     //->middleware('verified');
+
+
+Route::name('test.')->prefix('test')->group(function() {
+    Route::get('/', 'TestController@index')->name('index');
+
+    Route::get('purchase-entry', 'TestController@purchaseEntry')->name('purchase-entry');
+    Route::post('purchase-entry', 'TestController@purchaseEntryPost')->name('purchase-entry.post');
+
+});

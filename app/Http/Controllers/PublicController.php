@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 /**
  * Class StaticController
  *
- * Controller for static page routes.
+ * Controller for public pages.
  *
  * @package App\Http\Controllers
  */
@@ -20,4 +20,5 @@ class PublicController extends Controller
 
         return view('public.index');
     }
+
 }
