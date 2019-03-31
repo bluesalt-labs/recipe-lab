@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateIngredientCostsTable extends Migration
+class CreateMerchantProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateIngredientCostsTable extends Migration
      */
     public function up()
     {
-        Schema::create('ingredient_costs', function (Blueprint $table) {
+        Schema::create('merchant_products', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('ingredient_id');
-            $table->integer('cost_unit_id');
+            $table->bigInteger('merchant_id');
+            $table->string('ingredient_id');
+            $table->string('cost_unit_id');
             $table->integer('measure_unit_id');
-            $table->integer('merchant_id')->nullable();
-            $table->decimal('cost_per_unit', 12, 8)->unsigned();
+            $table->string('cost');
+            $table->string('units');
             $table->timestamp('purchased_at', 0)->nullable();
             $table->timestamp('created_at', 0)->nullable();
         });
@@ -32,6 +33,6 @@ class CreateIngredientCostsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ingredient_costs');
+        Schema::dropIfExists('merchant_products');
     }
 }

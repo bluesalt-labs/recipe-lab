@@ -13,9 +13,12 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             CostUnitsTableSeeder::class,
+            MeasureUnitsTableSeeder::class,
             IngredientCategoriesTableSeeder::class,
             IngredientTypesTableSeeder::class,
-            MeasureUnitsTableSeeder::class,
+            RecipeCategoriesSeeder::class,
+            RecipeTypesSeeder::class,
+            MerchantsTableSeeder::class,
         ]);
     }
 }
