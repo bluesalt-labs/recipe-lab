@@ -16,7 +16,7 @@ class CreateMeasureUnitsTable extends Migration
         Schema::create('measure_units', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('short_name');
+            $table->string('short_name')->nullable();
             $table->integer('type')->default(0);
             $table->integer('system')->default(0);
             $table->timestamps();
