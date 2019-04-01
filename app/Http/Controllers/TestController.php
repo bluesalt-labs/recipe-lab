@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Ingredient;
 
 /**
  * Class TestController
@@ -27,7 +28,14 @@ class TestController extends Controller
 
 
     public function ingredientEntryPost() {
-        return view('test.ingredient-entry')->with('postData', request()->all() );
+        // todo: I forget where form validation goes, but technically it'd be part of the API controller anyway
+        $ingredient = Ingredient::create([
+            'name'                  => request()->input('name'),
+            'description'           => request()->input('description'),
+            'ingredient_type_id'    => intval(request()->input('type')),
+        ]);
+
+        return view('test.ingredient-entry')->with('ingredient', $ingredient );
     }
 
 
@@ -37,6 +45,10 @@ class TestController extends Controller
 
 
     public function purchaseEntryPost() {
+        // todo: I forget where form validation goes, but technically it'd be part of the API controller anyway
+
+
+
         return view('test.purchase-entry')->with('postData', request()->all() );
     }
 

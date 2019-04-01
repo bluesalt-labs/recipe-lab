@@ -16,6 +16,7 @@ class CreateIngredientsTable extends Migration
         Schema::create('ingredients', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
+            // short name? but is that the same as type?
             $table->string('description')->nullable();
             $table->string('ingredient_type_id')->nullable();
             $table->timestamps();

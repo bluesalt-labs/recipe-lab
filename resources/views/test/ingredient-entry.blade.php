@@ -5,12 +5,10 @@
 @section('content')
 
 @php
-    $categories = \App\Models\IngredientCategory::all();
-    $types      = \App\Models\IngredientType::all();
-    // id
-    // name
-    // description
-    // ingredient_type_id
+$categories     = \App\Models\IngredientCategory::all()->sortBy('name');
+$types          = \App\Models\IngredientType::all()->sortBy('name');
+$allIngredients = \App\Models\Ingredient::all()->sortBy('ingredient_type_id');
+
 @endphp
 
     <div class="container mx-auto max-w-lg">
@@ -87,13 +85,32 @@
 
 
 
-        @if(isset($postData))
-            <div class="bg-black text-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
-                <hr class="border-light" />
-                <code><pre>{{ json_encode($postData, JSON_PRETTY_PRINT) }}</pre></code>
-            </div>
-
+        @if(isset($ingredient))
+        <div class="bg-black text-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+            <hr class="border-light" />
+            <code><pre>{{ json_encode($ingredient, JSON_PRETTY_PRINT) }}</pre></code>
+        </div>
         @endif
 
-    </div>
+        @if(isset($allIngredients))
+
+        <table class="table-collapse shadow-md rounded max-w-lg w-full mx-auto">
+            <thead class="text-left border-b border-grey bg-grey-lightest">
+            <tr>
+                <th class="p-3">Name</th>
+                <th class="p-3">Type</th>
+                <th class="p-3">Description</th>
+            </tr>
+            </thead>
+            <tbody>
+                @foreach($allIngredients as $ingredientListItem)
+                <tr>
+                    <td class="p-2">{{ $ingredientListItem->name }}</td>
+                    <td class="p-2">{{ $ingredientListItem->ingredientType->name }}</td>
+                    <td class="p-2">{{ $ingredientListItem->description }}</td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+        @endif
 @endsection
